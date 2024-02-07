@@ -1,14 +1,13 @@
 # encoding: ASCII-8BIT
 
-# 
+#
 # A file with general support functions used by most files in the project.
-# 
+#
 # These are the only methods added to other classes.
-# 
+#
 
 require 'logger'
 require 'stringio'
-require 'enumerator'
 
 class String # :nodoc:
 	def each_chunk size
@@ -85,7 +84,7 @@ end
 #
 # I don't want to force the class to cache children (eg where children
 # are loaded on request in pst), because that forces the whole tree to
-# be loaded. So, the methods should only call #each_child once, and 
+# be loaded. So, the methods should only call #each_child once, and
 # breadth first iteration holds its own copy of the children around.
 #
 # Main methods are #recursive, and #to_tree
@@ -169,7 +168,7 @@ module Ole
 			include File::Constants
 			BINARY = 0x4
 		end
-		
+
 		include Constants
 		NAMES = %w[rdonly wronly rdwr creat trunc append binary]
 
